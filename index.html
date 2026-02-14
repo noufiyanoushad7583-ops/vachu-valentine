@@ -1,18 +1,95 @@
-<h1>💖 Happy Valentine's Day Vachu 💖</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For Vachu ❤️</title>
 
-<p>You hacked my heart permanently ❤️</p>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #8B0000, #ff1a1a, #ff4d6d);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      overflow: hidden;
+    }
 
-<p>
-I’m really sorry if I ever hurt you or made you sad.
-That was never my intention.
-</p>
+    .box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
+      max-width: 600px;
+    }
 
-<p>
-I don’t need anything from you —
-I just truly wish you happiness, peace, and a beautiful life ahead 💫
-</p>
+    h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 15px #ff0000;
+    }
 
-<p>
-You will always be special to me 🤍
-</p>
+    p {
+      font-size: 20px;
+      margin: 12px 0;
+      line-height: 1.6;
+    }
 
+    .heart {
+      position: fixed;
+      bottom: -10px;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <h1>❤️ Happy Valentine's Day Vachu ❤️</h1>
+
+    <p>You hacked my heart permanently ❤️</p>
+
+    <p>
+      I’m truly sorry if I ever hurt you or made you sad.
+      That was never my intention.
+    </p>
+
+    <p>
+      I don’t need anything from you —
+      I just wish you happiness, peace,
+      and a beautiful life ahead 💫
+    </p>
+
+    <p>You will always be special to me 🤍</p>
+  </div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(createHeart, 400);
+  </script>
+
+</body>
+</html>
